@@ -79,6 +79,26 @@ export const AboutUsPage = () => {
           ))}
         </div>
       </section>
+
+      {/* Testimonials */}
+      <section className="max-w-7xl mx-auto px-4 py-48 border-t border-art-gray/20">
+        <SectionTitle title="Client Testimonials" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          {[
+            { name: "Alex Mercer", role: "Streetwear Enthusiast", quote: "The curation here is unmatched. Every piece I've acquired feels like a true artifact. Quality and speed of dispatch are phenomenal." },
+            { name: "Sarah Chen", role: "Fashion Blogger", quote: "Aether has completely elevated my wardrobe. The pieces are minimal yet make a bold statement. Customer support is always on point." },
+            { name: "Marcus Johnson", role: "Creative Director", quote: "The attention to detail, from the website's aesthetic to the packaging, is a masterclass in branding. Will definitely be returning." }
+          ].map((testimonial, i) => (
+             <div key={i} className="bg-art-muted/30 p-12 border border-art-gray/10 space-y-6 hover:border-art-accent/20 transition-all">
+                <p className="text-sm italic leading-relaxed text-gray-400">"{testimonial.quote}"</p>
+                <div>
+                   <h4 className="text-[10px] uppercase tracking-[0.2em] font-bold text-art-text">{testimonial.name}</h4>
+                   <p className="text-[9px] uppercase tracking-widest text-gray-500">{testimonial.role}</p>
+                </div>
+             </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
